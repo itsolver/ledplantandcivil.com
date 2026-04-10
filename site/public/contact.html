@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | LED Plant & Civil</title>
+    <meta
+      name="description"
+      content="Contact LED Plant and Civil for civil works, underground services and plant hire enquiries."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/site.js" defer></script>
+  </head>
+  <body data-page="contact" id="top">
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero__panel">
+          <div class="panel panel--copy stack-lg">
+            <p class="eyebrow">Contact</p>
+            <h1 class="page-title">Start a civil, underground or plant hire enquiry.</h1>
+            <p class="lede">
+              Contact LED Plant & Civil for project enquiries across South East Queensland using the confirmed public business email
+              and the enquiry form below.
+            </p>
+          </div>
+          <div class="panel panel--media">
+            <img src="assets/media/hero-still.jpg" alt="LED Plant and Civil site activity">
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="stack-md">
+            <article class="info-card">
+              <span class="label">Email</span>
+              <strong><a href="mailto:david@ledplantandcivil.com">david@ledplantandcivil.com</a></strong>
+              <p>Use this address for project enquiries, service requests and careers expressions of interest.</p>
+            </article>
+            <article class="info-card">
+              <span class="label">Service area</span>
+              <strong>South East QLD</strong>
+              <ul class="meta-list">
+                <li>Coolangatta to Harvey Bay</li>
+                <li>East Coast to Toowoomba</li>
+                <li>Civil works, underground services and plant hire support</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <span class="label">Capability statement</span>
+              <strong>Need a quick capability summary?</strong>
+              <p>Download the current capability statement directly from the site.</p>
+              <p><a href="assets/docs/capability-statement.pdf" download>Download capability statement</a></p>
+            </article>
+          </div>
+
+          <div class="form-card stack-md">
+            <div class="stack-md">
+              <p class="eyebrow">Contact form</p>
+              <h2 class="section-title">Send an enquiry</h2>
+              <p class="section-copy">
+                This form opens your email client and pre-fills a message to LED Plant & Civil.
+              </p>
+            </div>
+            <form class="contact-form" data-mailto-form>
+              <div class="contact-form__row">
+                <div class="field">
+                  <label for="first-name">First name</label>
+                  <input id="first-name" name="first_name" type="text" required>
+                </div>
+                <div class="field">
+                  <label for="last-name">Last name</label>
+                  <input id="last-name" name="last_name" type="text" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+              </div>
+              <div class="field">
+                <label for="subject">Subject or enquiry type</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select an enquiry type</option>
+                  <option value="Civil works enquiry">Civil works enquiry</option>
+                  <option value="Underground services enquiry">Underground services enquiry</option>
+                  <option value="Plant hire enquiry">Plant hire enquiry</option>
+                  <option value="Careers enquiry">Careers enquiry</option>
+                  <option value="General enquiry">General enquiry</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="button button--primary" type="submit">Open email draft</button>
+              <p class="form-note">If you need a call back or site meeting, include the preferred details in your message.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+  </body>
+</html>

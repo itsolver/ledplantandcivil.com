@@ -8,7 +8,7 @@
 - Existing Stitch context:
   - Stitch project: `projects/9514040008013092560`
   - Design system source of truth: `.stitch/DESIGN.md`
-  - Current implementation source: `flask_app/templates/`
+  - Current implementation source: `site/public/`
 - Key adaptation rule: use State Wide Roofing for structure and UX patterns only. Do not reuse roofing-specific copy, sectors, imagery, or trust/logo treatments.
 
 ## Reference site page inventory
@@ -67,6 +67,15 @@
   - capability statement download
   - careers link
   - social links only if confirmed
+
+## Implementation status
+- [x] Home implemented at `site/public/index.html`
+- [x] Services implemented at `site/public/services.html`
+- [x] Projects implemented at `site/public/projects.html`
+- [x] About implemented at `site/public/about-us.html`
+- [x] Careers implemented at `site/public/careers.html`
+- [x] Contact implemented at `site/public/contact.html`
+- [x] Shared assets, styling and navigation implemented under `site/public/assets/`
 
 ## Page outlines
 
@@ -203,6 +212,12 @@
 - Do not claim LED already holds ISO 9001, ISO 14001, or ISO 45001 certification.
 - Do not invent project metrics, fleet counts, phone numbers, addresses, awards, or client logos.
 - Keep the home page focused on civil capability, project imagery, leadership credibility, and contact conversion.
+
+## Roadmap
+- Build a branded `404.html` utility page that matches the current brutalist site language.
+- Add favicon, open graph metadata and final browser polish once the content direction is approved.
+- Decide whether the contact flow should stay mailto-based or move to a real form submission endpoint.
+- Confirm whether careers stays as a footer-linked secondary page or becomes a primary-nav page later.
 
 ## Open questions / assumptions
 - Confirm whether `/about-us` should stay as the route slug, or whether `/about` is preferred.
