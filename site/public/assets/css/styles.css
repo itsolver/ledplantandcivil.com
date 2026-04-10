@@ -356,6 +356,10 @@ button {
 }
 
 .hero__facts li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 7.5rem;
   padding: 1rem 1rem 1.1rem;
   background: rgba(14, 14, 14, 0.54);
   backdrop-filter: blur(16px);
@@ -404,10 +408,13 @@ button {
 }
 
 .hero__badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   position: relative;
   z-index: 1;
   max-width: none;
-  min-height: 100%;
+  min-height: 7.5rem;
   padding: 1rem 1.15rem;
   background: rgba(14, 14, 14, 0.62);
   backdrop-filter: blur(18px);
