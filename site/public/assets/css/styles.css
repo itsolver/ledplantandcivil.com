@@ -232,24 +232,11 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  padding: 0.15rem 0.25rem 0.2rem;
-  border-radius: 0.3rem;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(248, 250, 252, 0) 0%,
-      rgba(248, 250, 252, 0.08) 46%,
-      rgba(248, 250, 252, 0.62) 78%,
-      rgba(248, 250, 252, 0.82) 100%
-    );
 }
 
 .brand img {
   width: min(13rem, 48vw);
   height: auto;
-  filter:
-    drop-shadow(0 0 0.16rem rgba(248, 250, 252, 0.82))
-    drop-shadow(0 0.45rem 1rem rgba(14, 14, 14, 0.42));
 }
 
 .site-nav {
@@ -973,6 +960,10 @@ button {
   .site-header__inner {
     grid-template-columns: auto auto;
     justify-content: space-between;
+  }
+
+  body[data-page="projects"] .page-hero .panel--media {
+    display: none;
   }
 
   .menu-toggle {

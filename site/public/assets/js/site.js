@@ -18,7 +18,7 @@ function renderHeader(activePage) {
     <header class="site-header">
       <div class="container site-header__inner">
         <a class="brand" href="index.html" aria-label="LED Plant and Civil home">
-          <img src="assets/media/led-logo-382px.webp" alt="LED Plant and Civil">
+          <img src="assets/media/led-logo-inverse-470px.webp" alt="LED Plant and Civil">
         </a>
         <div class="site-header__nav-group" data-nav-group>
           <nav class="site-nav" id="primary-nav" aria-label="Primary">${navMarkup}</nav>
@@ -97,7 +97,7 @@ function renderFooter() {
         <div class="site-footer__panel">
           <div class="site-footer__grid">
             <div class="site-footer__brand stack-md">
-              <img src="assets/media/led-logo-382px.webp" alt="LED Plant and Civil">
+              <img src="assets/media/led-logo-inverse-470px.webp" alt="LED Plant and Civil">
               <p>Dependable civil works, underground service installations and plant hire solutions across South East Queensland.</p>
             </div>
             <div>
