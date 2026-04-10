@@ -250,7 +250,7 @@ button {
   min-height: 3.25rem;
   padding: 0 1.25rem;
   border-radius: var(--radius-sm);
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(14, 14, 14, 0.54);
   color: #f8fafc;
   text-shadow: 0 0.2rem 1rem rgba(14, 14, 14, 0.3);
   backdrop-filter: blur(14px);
@@ -263,7 +263,7 @@ button {
 
 .site-nav a:hover,
 .site-nav a.is-current {
-  background: rgba(30, 41, 59, 0.72);
+  background: rgba(14, 14, 14, 0.54);
   color: var(--primary);
   box-shadow:
     inset 0 1px 0 rgba(191, 227, 83, 0.32),
