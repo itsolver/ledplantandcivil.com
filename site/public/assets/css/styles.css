@@ -173,7 +173,7 @@ button {
   min-height: 3.25rem;
   padding: 0 1.25rem;
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -250,7 +250,7 @@ button {
   min-height: 3.25rem;
   padding: 0 1.25rem;
   border-radius: var(--radius-sm);
-  background: rgba(14, 14, 14, 0.54);
+  background: rgba(14, 14, 14, 0.78);
   color: #f8fafc;
   text-shadow: 0 0.2rem 1rem rgba(14, 14, 14, 0.3);
   backdrop-filter: blur(14px);
@@ -259,6 +259,28 @@ button {
     inset 0 1px 0 rgba(248, 250, 252, 0.12),
     inset 0 -1px 0 rgba(248, 250, 252, 0.12);
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+#primary-nav > a:first-child {
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#primary-nav > a:nth-last-child(2) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+#primary-nav > a:not(:first-child):not(:nth-last-child(2)):not(:last-child) {
+  border-radius: 0;
+}
+
+#primary-nav > a:last-child {
+  border-radius: var(--radius-sm);
 }
 
 .site-nav a:hover,
