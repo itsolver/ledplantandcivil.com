@@ -22,24 +22,39 @@
     <div data-site-header></div>
     <main>
       <section class="hero">
+        <div class="hero__background">
+          <video
+            class="hero__video"
+            data-adaptive-video
+            data-src-low="assets/media/hero-drone-360.mp4"
+            data-type-low="video/mp4"
+            data-src-medium="assets/media/hero-drone-480.webm"
+            data-type-medium="video/webm"
+            data-src-high="assets/media/hero-drone-1080.webm"
+            data-type-high="video/webm"
+            data-src-ultra="assets/media/hero-drone-2160.webm"
+            data-type-ultra="video/webm"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="assets/media/hero-still.jpg"
+          >
+            <img src="assets/media/hero-still.jpg" alt="LED Plant and Civil machinery on site">
+          </video>
+        </div>
         <div class="container hero__grid">
           <div class="hero__copy stack-lg">
-            <p class="eyebrow">South East QLD civil delivery</p>
             <h1 class="display">
               Civil works, underground services and <span>plant hire</span> done right the first time.
             </h1>
-            <p class="lede">
-              LED Plant and Civil deliver dependable civil works, earthworks, underground service
-              installations and plant hire solutions for developers and principal contractors across Southeast Queensland.
-            </p>
-            <p class="section-copy">
-              From early works right through to handover, we combine the right people, machinery and methods
-              to keep projects safe, compliant and on program.
-            </p>
             <div class="button-row">
               <a class="button button--primary" href="services.html">View Services</a>
               <a class="button button--secondary" href="contact.html">Contact Us</a>
             </div>
+          </div>
+          <div class="hero__lower">
             <ul class="hero__facts">
               <li>
                 <span class="label">Clients</span>
@@ -54,14 +69,6 @@
                 <strong>Early works to handover</strong>
               </li>
             </ul>
-          </div>
-          <div class="hero__media">
-            <div class="hero__media-frame">
-              <video autoplay muted loop playsinline poster="assets/media/hero-still.jpg">
-                <source src="assets/media/hero-drone.mp4" type="video/mp4">
-                <img src="assets/media/hero-still.jpg" alt="LED Plant and Civil machinery on site">
-              </video>
-            </div>
             <div class="hero__badge">
               <span class="label">Operational focus</span>
               <strong>Safe, compliant and technically precise outcomes.</strong>

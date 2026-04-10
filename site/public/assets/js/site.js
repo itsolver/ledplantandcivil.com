@@ -126,9 +126,103 @@ function wireMailtoForm() {
   });
 }
 
+function pickAdaptiveVideoTier() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    return { tier: null, autoplay: false };
+  }
+
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const viewportWidth = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0);
+  const effectiveType = connection && typeof connection.effectiveType === "string" ? connection.effectiveType : "";
+
+  if (connection && connection.saveData) {
+    return { tier: "low", autoplay: true };
+  }
+
+  if (effectiveType === "slow-2g" || effectiveType === "2g") {
+    return { tier: "low", autoplay: true };
+  }
+
+  if (viewportWidth < 480) {
+    return { tier: "low", autoplay: true };
+  }
+
+  if (effectiveType === "3g" || viewportWidth < 768) {
+    return { tier: "medium", autoplay: true };
+  }
+
+  if (viewportWidth >= 1900) {
+    return { tier: "ultra", autoplay: true };
+  }
+
+  return { tier: "high", autoplay: true };
+}
+
+function wireAdaptiveHeroVideo() {
+  const video = document.querySelector("[data-adaptive-video]");
+  if (!video) return;
+
+  const sourceMap = {
+    low: { src: video.dataset.srcLow, type: video.dataset.typeLow || "" },
+    medium: { src: video.dataset.srcMedium, type: video.dataset.typeMedium || "" },
+    high: { src: video.dataset.srcHigh, type: video.dataset.typeHigh || "" },
+    ultra: { src: video.dataset.srcUltra, type: video.dataset.typeUltra || "" }
+  };
+
+  const fallbackOrder = {
+    low: ["low"],
+    medium: ["medium", "low"],
+    high: ["high", "medium", "low"],
+    ultra: ["ultra", "high", "medium", "low"]
+  };
+
+  const selection = pickAdaptiveVideoTier();
+  if (!selection.autoplay) {
+    video.removeAttribute("autoplay");
+    return;
+  }
+
+  const preferredTiers = fallbackOrder[selection.tier] || fallbackOrder.low;
+  const chosenTier = preferredTiers.find((tier) => {
+    const candidate = sourceMap[tier];
+    if (!candidate || !candidate.src) return false;
+    return !candidate.type || !!video.canPlayType(candidate.type);
+  });
+  const chosen = chosenTier ? sourceMap[chosenTier] : sourceMap.low;
+
+  if (!chosen || !chosen.src) return;
+
+  const existingSource = video.querySelector("source[data-adaptive-source]");
+  if (existingSource && existingSource.getAttribute("src") === chosen.src) {
+    return;
+  }
+
+  if (existingSource) {
+    existingSource.remove();
+  }
+
+  const source = document.createElement("source");
+  source.setAttribute("data-adaptive-source", "true");
+  source.src = chosen.src;
+  if (chosen.type) {
+    source.type = chosen.type;
+  }
+
+  video.prepend(source);
+  video.dataset.videoTier = chosenTier || selection.tier || "poster";
+  video.load();
+
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(() => {});
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const activePage = document.body.dataset.page || "";
   renderHeader(activePage);
   renderFooter();
   wireMailtoForm();
+  wireAdaptiveHeroVideo();
 });
