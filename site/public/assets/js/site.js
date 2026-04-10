@@ -30,6 +30,20 @@ function renderHeader(activePage) {
     </header>
   `;
 
+  if (activePage === "home") {
+    header.style.position = "absolute";
+    header.style.top = "0";
+    header.style.left = "0";
+    header.style.right = "0";
+    header.style.zIndex = "100";
+  } else {
+    header.style.position = "";
+    header.style.top = "";
+    header.style.left = "";
+    header.style.right = "";
+    header.style.zIndex = "";
+  }
+
   const toggle = header.querySelector(".menu-toggle");
   const nav = header.querySelector(".site-nav");
 
