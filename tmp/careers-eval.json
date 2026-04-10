@@ -1,0 +1,27 @@
+{
+  "title": "Careers | Statewide Roofing",
+  "url": "https://www.statewideroofing.net.au/careers",
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Join the Success"
+    },
+    {
+      "tag": "h2",
+      "text": "Apprentice Roof Plumber"
+    }
+  ],
+  "paragraphs": [
+    "We Are Hiring a Range of Positions",
+    "We are seeking a hard working, honest and reliable individual to undertake a 3 year apprenticeship in roof plumbing.",
+    "​"
+  ],
+  "lists": [],
+  "buttons": [
+    {
+      "label": "Apply Now",
+      "href": "mailto:admin@statewideroofing.net.au?subject=Apprentice%20Roof%20Plumber"
+    }
+  ],
+  "imageCount": 2
+}
