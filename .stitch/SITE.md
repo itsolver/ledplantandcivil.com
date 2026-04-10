@@ -9,6 +9,7 @@
   - Stitch project: `projects/9514040008013092560`
   - Design system source of truth: `.stitch/DESIGN.md`
   - Current implementation source: `site/public/`
+  - Current Surge preview: `https://ledplantandcivil-preview-20260410-1.surge.sh`
 - Key adaptation rule: use State Wide Roofing for structure and UX patterns only. Do not reuse roofing-specific copy, sectors, imagery, or trust/logo treatments.
 
 ## Reference site page inventory
