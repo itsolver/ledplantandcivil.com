@@ -2,7 +2,7 @@ const NAV_ITEMS = [
   { key: "services", href: "services.html", label: "Services" },
   { key: "projects", href: "projects.html", label: "Projects" },
   { key: "about", href: "about-us.html", label: "About Us" },
-  { key: "contact", href: "contact.html", label: "Contact" }
+  { key: "careers", href: "careers.html", label: "Careers" }
 ];
 
 function renderHeader(activePage) {
@@ -18,14 +18,20 @@ function renderHeader(activePage) {
     <header class="site-header">
       <div class="container site-header__inner">
         <a class="brand" href="index.html" aria-label="LED Plant and Civil home">
-          <img src="assets/media/logo-text.png" alt="LED Plant and Civil">
+          <img src="assets/media/led-logo-382px.webp" alt="LED Plant and Civil">
         </a>
-        <nav class="site-nav" id="primary-nav" aria-label="Primary">${navMarkup}</nav>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <div class="site-header__nav-group" data-nav-group>
+          <nav class="site-nav" id="primary-nav" aria-label="Primary">${navMarkup}</nav>
+          <a class="button button--primary header-cta" href="contact.html">Contact Us</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
-          Menu
+          <span class="menu-toggle__icon" aria-hidden="true">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+          </span>
         </button>
-        <a class="button button--primary header-cta" href="contact.html">Contact Us</a>
       </div>
     </header>
   `;
@@ -45,18 +51,37 @@ function renderHeader(activePage) {
   }
 
   const toggle = header.querySelector(".menu-toggle");
+  const navGroup = header.querySelector("[data-nav-group]");
   const nav = header.querySelector(".site-nav");
 
-  if (!toggle || !nav) return;
+  if (!toggle || !nav || !navGroup) return;
+
+  const closeMenu = () => {
+    navGroup.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
 
   toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
+    const isOpen = navGroup.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  nav.addEventListener("click", () => {
-    nav.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
+  navGroup.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navGroup.classList.contains("is-open")) return;
+    if (header.contains(event.target)) return;
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
   });
 }
 
@@ -72,7 +97,7 @@ function renderFooter() {
         <div class="site-footer__panel">
           <div class="site-footer__grid">
             <div class="site-footer__brand stack-md">
-              <img src="assets/media/logo-text.png" alt="LED Plant and Civil">
+              <img src="assets/media/led-logo-382px.webp" alt="LED Plant and Civil">
               <p>Dependable civil works, underground service installations and plant hire solutions across South East Queensland.</p>
             </div>
             <div>

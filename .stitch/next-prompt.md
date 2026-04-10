@@ -15,11 +15,11 @@ The page should feel like part of the same LED Plant & Civil website, not a gene
 - Keep imagery, if any, high-contrast and machinery-led.
 
 **Page Structure:**
-1. Shared header matching the live site navigation
-2. Large error headline and short explanatory copy
-3. Primary CTAs back to `Home` and `Contact`
-4. Secondary links to `Services`, `Projects` and `About Us`
-5. Shared footer matching the live site
+1. Shared header matching the live site navigation: `Services`, `Projects`, `About Us`, `Careers`, plus `Contact Us` as the primary CTA.
+2. Large error headline and short explanatory copy.
+3. Primary CTAs back to `Home` and `Contact`.
+4. Secondary links to `Services`, `Projects`, `About Us` and `Careers`.
+5. Shared footer matching the live site.
 
 **Content Guidance:**
 - Tone should be calm, capable and direct.

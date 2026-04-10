@@ -55,12 +55,11 @@
 - Do not create individual service-detail or project-detail routes until more content exists.
 
 ## Global navigation
-- Header nav: `Services`, `Projects`, `About Us`, `Contact`.
+- Header nav: `Services`, `Projects`, `About Us`, `Careers`.
 - Logo: links to home.
 - Primary header CTA: `Contact Us`.
+- Mobile navigation: icon-first burger toggle plus a dedicated overlay panel with stacked primary links and the same `Contact Us` CTA retained inside the panel.
 - Secondary utility item if space allows: `Capability Statement`.
-- `Careers` should be linked in the footer by default.
-- Move `Careers` into the primary nav only if active hiring becomes a regular priority.
 - Footer should include:
   - contact email: `david@ledplantandcivil.com`
   - service area summary: South East QLD, including `Coolangatta to Harvey Bay` and `East Coast to Toowoomba`
@@ -217,11 +216,9 @@
 - Build a branded `404.html` utility page that matches the current brutalist site language.
 - Add favicon, open graph metadata and final browser polish once the content direction is approved.
 - Decide whether the contact flow should stay mailto-based or move to a real form submission endpoint.
-- Confirm whether careers stays as a footer-linked secondary page or becomes a primary-nav page later.
 
 ## Open questions / assumptions
 - Confirm whether `/about-us` should stay as the route slug, or whether `/about` is preferred.
-- Confirm whether `Careers` should stay footer-only until real role copy exists.
 - Confirm whether the capability statement should be exposed as a global CTA or only on About/Contact.
 - Confirm whether the certification-progress letter dated 10 March 2026 should appear publicly, and what exact wording is approved.
 - Confirm the public phone number, if any. None was provided in the Markdown brief.
