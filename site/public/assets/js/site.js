@@ -10,8 +10,10 @@ function renderHeader(activePage) {
   if (!header) return;
 
   const navMarkup = NAV_ITEMS.map(
-    ({ key, href, label }) =>
-      `<a href="${href}" class="${activePage === key ? "is-current" : ""}">${label}</a>`
+    ({ key, href, label }) => {
+      const isCurrent = activePage === key;
+      return `<a href="${href}" class="${isCurrent ? "is-current" : ""}"${isCurrent ? ' aria-current="page"' : ""}>${label}</a>`;
+    }
   ).join("");
 
   header.innerHTML = `

@@ -8,6 +8,17 @@
       name="description"
       content="Contact LED Plant and Civil for civil works, underground services and plant hire enquiries."
     >
+    <meta name="theme-color" content="#131313">
+    <meta property="og:site_name" content="LED Plant & Civil">
+    <meta property="og:title" content="Contact | LED Plant & Civil">
+    <meta
+      property="og:description"
+      content="Contact LED Plant and Civil for civil works, underground services and plant hire enquiries."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ledplantandcivil.com/assets/media/hero-still.webp">
+    <meta property="og:image:alt" content="LED Plant and Civil site activity">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -74,21 +85,21 @@
               <div class="contact-form__row">
                 <div class="field">
                   <label for="first-name">First name</label>
-                  <input id="first-name" name="first_name" type="text" required>
+                  <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
                 </div>
                 <div class="field">
                   <label for="last-name">Last name</label>
-                  <input id="last-name" name="last_name" type="text" required>
+                  <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
                 </div>
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" required>
+                <input id="email" name="email" type="email" autocomplete="email" required>
               </div>
               <div class="field">
                 <label for="subject">Subject or enquiry type</label>
                 <select id="subject" name="subject" required>
-                  <option value="">Select an enquiry type</option>
+                  <option value="" selected>Select an enquiry type</option>
                   <option value="Civil works enquiry">Civil works enquiry</option>
                   <option value="Underground services enquiry">Underground services enquiry</option>
                   <option value="Plant hire enquiry">Plant hire enquiry</option>
@@ -100,7 +111,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
               </div>
-              <button class="button button--primary" type="submit">Open email draft</button>
+              <button class="button button--primary" type="submit">Submit enquiry</button>
               <p class="form-note">If you need a call back or site meeting, include the preferred details in your message.</p>
             </form>
           </div>
