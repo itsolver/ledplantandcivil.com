@@ -237,7 +237,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.75rem;
   width: 100%;
 }
 
@@ -416,18 +415,6 @@ button {
   position: relative;
   max-width: min(56rem, 100%);
   padding: clamp(1.5rem, 3vw, 2.6rem) clamp(1.5rem, 3vw, 2.6rem) clamp(8.75rem, 16vw, 11rem);
-}
-
-.hero__copy::before {
-  content: "";
-  position: absolute;
-  top: clamp(-2rem, -5vw, -3rem);
-  right: clamp(3rem, 20vw, 14rem);
-  bottom: clamp(1.75rem, 4vw, 3rem);
-  left: calc(-1 * min(6vw, 4.5rem));
-  z-index: -1;
-  background: linear-gradient(135deg, rgba(14, 14, 14, 0.96), rgba(28, 27, 27, 0.82));
-  box-shadow: var(--panel-shadow);
 }
 
 .hero__copy .button-row {
@@ -1052,13 +1039,6 @@ button {
     padding-bottom: 1.25rem;
   }
 
-  .hero__copy::before {
-    right: 1.5rem;
-    left: -1rem;
-    top: -1rem;
-    bottom: 1rem;
-  }
-
   .hero__lower {
     position: static;
     grid-template-columns: 1fr;
@@ -1129,9 +1109,5 @@ button {
 
   .button-row {
     display: grid;
-  }
-
-  .hero__copy::before {
-    content: none;
   }
 }
